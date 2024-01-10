@@ -1,0 +1,20 @@
+@use '../../assets/variables' as v;
+
+.container {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+.logo {
+    background-color: black;
+}
+
+.navbar {
+    background-color: v.$primary-color;
+    min-height: calc(100vh - 5rem);
+}
+
+.package {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

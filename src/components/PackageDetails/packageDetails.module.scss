@@ -1,0 +1,35 @@
+@use '../../assets/variables' as v;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 5rem;
+
+    div:first-child {
+        line-height: 2rem;
+    }
+}
+
+.package {
+    font-size: 2rem;
+    font-weight: bold;
+    color: v.$primary-color;
+}
+
+.packageName {
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.commentSection {
+    margin-top: 1rem;
+    border-top: 1px solid #ccc;
+
+    textarea {
+        width: 100%;
+        background-color: lavenderblush;
+    }
+}

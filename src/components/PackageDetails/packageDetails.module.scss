@@ -31,5 +31,25 @@
     textarea {
         width: 100%;
         background-color: lavenderblush;
+        border: 1px solid #ccc;
+    }
+
+    .commentButtons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+
+        button {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 0.5rem 2rem;
+            background-color: black;
+            color: white;
+
+            &:first-child {
+                background-color: white;
+                color: black;
+            }
+        }
     }
 }

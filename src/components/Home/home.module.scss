@@ -2,7 +2,7 @@
 
 .container {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 70px 1fr;
 }
 
 .logo {
@@ -12,9 +12,11 @@
 .navbar {
     background-color: v.$primary-color;
     min-height: calc(100vh - 5rem);
+
 }
 
 .package {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border-right: 1px solid #ccc;
 }

@@ -11,7 +11,7 @@ const PackageDetails = ({ packageDetail }: PackageDetailsProps) => {
   const [comment, setComment] = useState<string>("");
   const submit = () => {
     const commentSectionList = commentSection[packageDetail?.id!] || [];
-    console.log(commentSectionList);
+
     localStorage.setItem(
       "commentSection",
       JSON.stringify({
@@ -31,7 +31,24 @@ const PackageDetails = ({ packageDetail }: PackageDetailsProps) => {
   return (
     <div className={styles.container}>
       <div>
-        <div className={styles.package}>Package</div>
+        <div className={styles.package}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            style={{ width: 30, height: 30 }}
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+            />
+          </svg>
+          Package
+        </div>
         <div className={styles.packageName}>
           <div>{packageDetail?.name}</div>
           <div>{packageDetail?.version}</div>

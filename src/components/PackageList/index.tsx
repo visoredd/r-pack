@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getPackageList } from "../../services/packageList";
 import styles from "./packageLis.module.scss";
+import NoResult from "./NoResult";
 export type Package = {
   id: string;
   name: string;
@@ -36,6 +37,13 @@ const PackageList = (props: PackageListProps) => {
         pac.name.toLowerCase().includes(props.fuzzySearch)
       )
     : null;
+
+  useEffect(() => {
+    if (filterData && filterData.length === 0) {
+      props.setPackageDetail(null);
+    }
+  }, [filterData]);
+
   if (isLoading) {
     return <div className={styles.container}>Loading......</div>;
   }
@@ -54,7 +62,9 @@ const PackageList = (props: PackageListProps) => {
           </div>
         ))
       ) : (
-        <div>0 Search Results: {props.fuzzySearch}</div>
+        <div>
+          <NoResult fuzzySearch={props.fuzzySearch} />
+        </div>
       )}
     </div>
   );
